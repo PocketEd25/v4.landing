@@ -1,14 +1,17 @@
 "use client";
 import Image from "next/image";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, cubicBezier } from "framer-motion";
 import { useRef } from "react";
 
 export default function FeatureSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
+  // ✅ Safari-friendly cubic-bezier easing
+  const easing = cubicBezier(0.25, 0.1, 0.25, 1);
+
   return (
-    <div className="bg-white py-20 overflow-hidden relative ">
+    <div className="bg-white py-20 overflow-hidden relative">
       {/* Heading */}
       <h1 className="text-[#223A52] text-center font-extrabold text-xl tracking-widest uppercase">
         Features
@@ -21,13 +24,13 @@ export default function FeatureSection() {
       >
         {/* TOP-RIGHT Feature Card (1️⃣ Numeracy in Action) */}
         <motion.div
-          initial={{ scale: 0, opacity: 0, x: 0, y: 0, zIndex: -10 }}
+          initial={{ scale: 0, opacity: 0, x: 0, y: 0 }}
           animate={
             isInView
-              ? { scale: 1, opacity: 1, x: 350, y: -300, zIndex: 10 }
+              ? { scale: 1, opacity: 1, x: 350, y: -300 }
               : {}
           }
-          transition={{ duration: 1, ease: "easeOut", delay: 0 }}
+          transition={{ duration: 1, ease: easing, delay: 0 }}
           className="absolute flex items-center gap-4 px-6 py-4"
         >
           <Image src="/fea3.png" alt="Top Feature Icon" width={150} height={150} />
@@ -44,11 +47,9 @@ export default function FeatureSection() {
 
         {/* RIGHT Feature Card (2️⃣ Clear CTA) */}
         <motion.div
-          initial={{ scale: 0, opacity: 0, x: 0, y: 0, zIndex: -10 }}
-          animate={
-            isInView ? { scale: 1, opacity: 1, x: 450, y: 0, zIndex: 10 } : {}
-          }
-          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+          initial={{ scale: 0, opacity: 0, x: 0, y: 0 }}
+          animate={isInView ? { scale: 1, opacity: 1, x: 450, y: 0 } : {}}
+          transition={{ duration: 1, ease: easing, delay: 0.2 }}
           className="absolute flex items-center gap-4 px-6 py-4"
         >
           <Image src="/fea2.png" alt="Problem Solving Icon" width={100} height={100} />
@@ -65,11 +66,9 @@ export default function FeatureSection() {
 
         {/* BOTTOM-RIGHT Feature Card (3️⃣ Entrepreneurial Mindset) */}
         <motion.div
-          initial={{ scale: 0, opacity: 0, x: 0, y: 0, zIndex: -10 }}
-          animate={
-            isInView ? { scale: 1, opacity: 1, x: 350, y: 300, zIndex: 10 } : {}
-          }
-          transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
+          initial={{ scale: 0, opacity: 0, x: 0, y: 0 }}
+          animate={isInView ? { scale: 1, opacity: 1, x: 350, y: 300 } : {}}
+          transition={{ duration: 1, ease: easing, delay: 0.4 }}
           className="absolute flex items-center gap-4 px-6 py-4"
         >
           <Image src="/fea4.png" alt="Bottom Feature Icon" width={100} height={100} />
@@ -86,13 +85,9 @@ export default function FeatureSection() {
 
         {/* BOTTOM-LEFT Feature Card (4️⃣ Financial Foundations) */}
         <motion.div
-          initial={{ scale: 0, opacity: 0, x: 0, y: 0, zIndex: -10 }}
-          animate={
-            isInView
-              ? { scale: 1, opacity: 1, x: -350, y: 300, zIndex: 10 }
-              : {}
-          }
-          transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
+          initial={{ scale: 0, opacity: 0, x: 0, y: 0 }}
+          animate={isInView ? { scale: 1, opacity: 1, x: -350, y: 300 } : {}}
+          transition={{ duration: 1, ease: easing, delay: 0.6 }}
           className="absolute flex items-center gap-4 px-6 py-4"
         >
           <div className="text-right">
@@ -109,11 +104,9 @@ export default function FeatureSection() {
 
         {/* LEFT Feature Card (5️⃣ Critical Thinking) */}
         <motion.div
-          initial={{ scale: 0, opacity: 0, x: 0, y: 0, zIndex: -10 }}
-          animate={
-            isInView ? { scale: 1, opacity: 1, x: -450, y: 0, zIndex: 10 } : {}
-          }
-          transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
+          initial={{ scale: 0, opacity: 0, x: 0, y: 0 }}
+          animate={isInView ? { scale: 1, opacity: 1, x: -450, y: 0 } : {}}
+          transition={{ duration: 1, ease: easing, delay: 0.8 }}
           className="absolute flex items-center gap-4 px-6 py-4"
         >
           <div className="text-right">
@@ -130,13 +123,9 @@ export default function FeatureSection() {
 
         {/* TOP-LEFT Feature Card (6️⃣ Smart Habits) */}
         <motion.div
-          initial={{ scale: 0, opacity: 0, x: 0, y: 0, zIndex: -10 }}
-          animate={
-            isInView
-              ? { scale: 1, opacity: 1, x: -350, y: -300, zIndex: 10 }
-              : {}
-          }
-          transition={{ duration: 1, ease: "easeOut", delay: 1 }}
+          initial={{ scale: 0, opacity: 0, x: 0, y: 0 }}
+          animate={isInView ? { scale: 1, opacity: 1, x: -350, y: -300 } : {}}
+          transition={{ duration: 1, ease: easing, delay: 1 }}
           className="absolute flex items-center gap-4 px-6 py-4"
         >
           <div className="text-right">
