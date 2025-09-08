@@ -24,7 +24,7 @@ const poppins = Poppins({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${poppins.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${poppins.variable} ${inter.variable}`}>
       <body>{children}</body>
     </html>
   )

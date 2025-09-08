@@ -35,7 +35,7 @@ export default function AboutSection() {
               financial education accessible to everyone. What began as a small
               initiative to help individuals understand money management has
               grown into a trusted learning community where knowledge meets
-              empowerment. For decades, we've been guiding students,
+              empowerment. For decades, we&apos;ve been guiding students,
               professionals, and lifelong learners to build confidence in
               handling personal and professional finances.
             </p>

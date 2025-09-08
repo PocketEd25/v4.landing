@@ -135,11 +135,7 @@ function Navbar() {
 }
 
 export default function Hero() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
+  // Removed the unused isVisible state
 
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
