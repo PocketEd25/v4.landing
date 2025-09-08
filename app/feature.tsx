@@ -148,81 +148,81 @@ export default function FeatureSection() {
         />
       </div>
 
-      {/* ----------- MOBILE VERSION (stacked, no animation) ----------- */}
-      <div className="flex flex-col items-center gap-8 mt-10 px-6 lg:hidden">
-        {/* Each Feature stacked vertically */}
-        <div className="flex items-start gap-4">
-          <Image src="/fea5.png" alt="Smart Habits" width={70} height={70} />
-          <div>
+      {/* ----------- MOBILE & TABLET VERSION (stacked, no animation) ----------- */}
+      <div className="flex flex-col items-center gap-6 mt-10 px-4 md:px-8 lg:hidden">
+        {/* Each Feature stacked vertically with consistent padding */}
+        <div className="flex items-start gap-4 w-full max-w-md p-4 md:p-5 bg-white rounded-lg">
+          <Image src="/fea5.png" alt="Smart Habits" width={70} height={70} className="flex-shrink-0" />
+          <div className="flex-1">
             <h1 className="text-[#223A52] font-bold uppercase text-sm it">
               Smart Habits
             </h1>
-            <p className="text-gray-700 text-xs">
+            <p className="text-gray-700 text-xs mt-1">
               Track spending and saving, set up financial routines, understand
               spending triggers, and form wealth-building habits.
             </p>
           </div>
         </div>
 
-        <div className="flex items-start gap-4">
-          <Image src="/fea3.png" alt="Numeracy in Action" width={70} height={70} />
-          <div>
+        <div className="flex items-start gap-4 w-full max-w-md p-4 md:p-5 bg-white rounded-lg">
+          <Image src="/fea3.png" alt="Numeracy in Action" width={70} height={70} className="flex-shrink-0" />
+          <div className="flex-1">
             <h1 className="text-[#223A52] font-bold uppercase text-sm it">
               Numeracy in Action
             </h1>
-            <p className="text-gray-700 text-xs">
+            <p className="text-gray-700 text-xs mt-1">
               Understand interest rates and loans, budget using real numbers,
               plan expenses with accuracy, and use ratios and percentages.
             </p>
           </div>
         </div>
 
-        <div className="flex items-start gap-4">
-          <Image src="/fea1.png" alt="Critical Thinking" width={70} height={70} />
-          <div>
+        <div className="flex items-start gap-4 w-full max-w-md p-4 md:p-5 bg-white rounded-lg">
+          <Image src="/fea1.png" alt="Critical Thinking" width={70} height={70} className="flex-shrink-0" />
+          <div className="flex-1">
             <h1 className="text-[#223A52] font-bold uppercase text-sm it">
               Critical Thinking
             </h1>
-            <p className="text-gray-700 text-xs">
+            <p className="text-gray-700 text-xs mt-1">
               Compare financial products, avoid scams, evaluate needs vs. wants,
               and plan for goals.
             </p>
           </div>
         </div>
 
-        <div className="flex items-start gap-4">
-          <Image src="/fea2.png" alt="Clear CTA" width={70} height={70} />
-          <div>
+        <div className="flex items-start gap-4 w-full max-w-md p-4 md:p-5 bg-white rounded-lg">
+          <Image src="/fea2.png" alt="Clear CTA" width={70} height={70} className="flex-shrink-0" />
+          <div className="flex-1">
             <h1 className="text-[#223A52] font-bold uppercase text-sm it">
               Clear CTA
             </h1>
-            <p className="text-gray-700 text-xs">
+            <p className="text-gray-700 text-xs mt-1">
               Develop strategies, analyze outcomes, and adapt to financial
               challenges effectively.
             </p>
           </div>
         </div>
 
-        <div className="flex items-start gap-4">
-          <Image src="/fea6.png" alt="Financial Foundations" width={70} height={70} />
-          <div>
+        <div className="flex items-start gap-4 w-full max-w-md p-4 md:p-5 bg-white rounded-lg">
+          <Image src="/fea6.png" alt="Financial Foundations" width={70} height={70} className="flex-shrink-0" />
+          <div className="flex-1">
             <h1 className="text-[#223A52] font-bold uppercase text-sm it">
               Financial Foundations
             </h1>
-            <p className="text-gray-700 text-xs">
+            <p className="text-gray-700 text-xs mt-1">
               Learn money management basics, understand savings, investments,
               credit, build financial literacy, and master banking skills.
             </p>
           </div>
         </div>
 
-        <div className="flex items-start gap-4">
-          <Image src="/fea4.png" alt="Entrepreneurial Mindset" width={70} height={70} />
-          <div>
+        <div className="flex items-start gap-4 w-full max-w-md p-4 md:p-5 bg-white rounded-lg">
+          <Image src="/fea4.png" alt="Entrepreneurial Mindset" width={70} height={70} className="flex-shrink-0" />
+          <div className="flex-1">
             <h1 className="text-[#223A52] font-bold uppercase text-sm it">
               Entrepreneurial Mindset
             </h1>
-            <p className="text-gray-700 text-xs">
+            <p className="text-gray-700 text-xs mt-1">
               Spot business opportunities, understand risk vs. reward, innovate
               for income, and manage side projects.
             </p>
