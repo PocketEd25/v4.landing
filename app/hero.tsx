@@ -35,18 +35,19 @@ function AnimatedCounter({
     return () => cancelAnimationFrame(animationFrame);
   }, [end, duration]);
 
-  return (
-    <div className="text-center">
-      {/* Numbers */}
-      <div className="text-3xl font-semibold text-[#223A52]">
-        {count.toLocaleString()}+
-      </div>
-      {/* Label */}
-      <div className="text-sm font-semibold text-[#223A52] mt-1">
-        {label}
-      </div>
+return (
+  <div className="text-center">
+    {/* Numbers */}
+    <div className="text-xl sm:text-2xl lg:text-3xl font-semibold text-[#223A52]">
+      {count.toLocaleString()}+
     </div>
-  );
+    {/* Label */}
+    <div className="text-xs sm:text-sm lg:text-base font-semibold text-[#223A52] mt-1">
+      {label}
+    </div>
+  </div>
+);
+
 }
 
 // Floating Navbar Component
@@ -172,51 +173,67 @@ export default function Hero() {
 <main className="relative z-10">
   <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-12">
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start lg:items-center min-h-[70vh] pt-4"> 
-      {/* ⬅️ added small pt-4 instead of big default gap */}
+      
+<div className="space-y-8 text-center lg:text-left pt-20 lg:pt-0">
+  <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold font-playfair text-[#223A52] leading-tight ">
+    Discover the World of{" "}
+    <span className="text-[#223A52]">Financial Wisdom</span>
+  </h1>
 
-            {/* Left Side */}
-            <div className="space-y-10">
-              <h1 className="text-5xl md:text-5xl lg:text-7xl font-bold font-playfair text-[#223A52] leading-tight">
-                Discover the world of{" "}
-                <span className="text-[#223A52]">Financial freedom</span>
-              </h1>
-
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl">
-                Join us in shaping the future of financial literacy! Follow us
-                for updates and resources to empower students with essential
-                money management skills.
-              </p>
-
-              <div className="pt-1">
-                <button className="bg-[#FEE617] font-poppins hover:bg-yellow-300 text-[#132B70] px-6 py-2 rounded-full text-sm font-bold transition-colors">
-                  Get Started
-                </button>
-              </div>
-
-              {/* Counters */}
-              <div className="grid grid-cols-2 font-poppins md:grid-cols-4 gap-4">
-                <AnimatedCounter end={50000} label="Users" />
-                <AnimatedCounter end={25000} label="Customers" />
-                <AnimatedCounter end={150} label="Cities" />
-              </div>
-            </div>
-
-            {/* Right Side Image */}
-            <div className="flex justify-center lg:justify-end mt-0 lg:mt-0">
-              <div className="relative w-full max-w-3xl">
-                <Image
-                  src="/image1.png"
-                  alt="Financial Growth and Success"
-                  width={800}
-                  height={600}
-                  className="w-[700px] h-auto object-contain relative z-10"
-                  priority
-                />
-              </div>
-            </div>
-          </div>
+  <p className="text-base md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+    Join us in shaping the future of financial literacy! Follow us
+    for updates and resources to empower students with essential
+    money management skills.
+  </p>
+        <div className="pt-1">
+          <button className="bg-[#FEE617] font-poppins hover:bg-yellow-300 text-[#132B70] px-6 py-2 rounded-full text-sm font-bold transition-colors">
+            Get Started
+          </button>
         </div>
-      </main>
+
+        {/* Counters for large screens */}
+{/* Counters for large screens */}
+<div className="hidden lg:grid grid-cols-3 gap-4 font-poppins mt-6 text-center lg:text-left">
+  <AnimatedCounter end={50000} label="Users" />
+  <AnimatedCounter end={25000} label="Customers" />
+  <AnimatedCounter end={150} label="Cities" />
+</div>
+
+      </div>
+
+      {/* Right Side (Image Section) */}
+      <div className="flex flex-col items-center lg:items-end mt-8 lg:mt-0 w-full">
+        <div className="relative w-full max-w-xs sm:max-w-md lg:max-w-3xl">
+          <Image
+            src="/image1.png"
+            alt="Financial Growth and Success"
+            width={800}
+            height={600}
+            className="w-full h-auto object-contain relative z-10"
+            priority
+          />
+        </div>
+
+{/* Counters for mobile (below image) */}
+<div className="grid grid-cols-3 gap-4 font-poppins mt-6 mb-10 text-center lg:hidden w-full">
+  <div>
+    <AnimatedCounter end={50000} label="Users" />
+  </div>
+  <div>
+    <AnimatedCounter end={25000} label="Customers" />
+  </div>
+  <div>
+    <AnimatedCounter end={150} label="Cities" />
+  </div>
+</div>
+
+
+      </div>
+    </div>
+  </div>
+</main>
+
+
     </div>
   );
 }

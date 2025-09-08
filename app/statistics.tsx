@@ -40,9 +40,11 @@ function AnimatedCounter({
   }, [end, duration, trigger]);
 
   return (
-    <div className="text-center">
-      <p className="text-4xl font-bold text-white">{count}%</p>
-      <p className="text-sm mt-1">{label}</p>
+    <div className="text-center w-1/3 sm:w-1/4 md:w-auto">
+      <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+        {count}%
+      </p>
+      <p className="text-xs sm:text-sm mt-1">{label}</p>
     </div>
   );
 }
@@ -55,24 +57,24 @@ export default function StatisticSection() {
     <>
       <div
         ref={ref}
-        className="relative bg-[#132B70] text-white py-20 px-5 md:px-20 overflow-hidden"
+        className="relative bg-[#132B70] text-white py-16 px-4 sm:px-8 md:px-20 overflow-hidden"
       >
         {/* Blurred background accents */}
-        <div className="absolute top-10 left-10 w-72 h-72 bg-[#98D4F8] rounded-full mix-blend-screen filter blur-[120px] opacity-50"></div>
-        <div className="absolute top-20 right-20 w-72 h-72 bg-[#98D4F8] rounded-full mix-blend-screen filter blur-[120px] opacity-50"></div>
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-[#98D4F8] rounded-full mix-blend-screen filter blur-[150px] opacity-50"></div>
+        <div className="absolute top-10 left-10 w-40 sm:w-72 h-40 sm:h-72 bg-[#98D4F8] rounded-full mix-blend-screen filter blur-[100px] sm:blur-[120px] opacity-50"></div>
+        <div className="absolute top-20 right-10 sm:right-20 w-40 sm:w-72 h-40 sm:h-72 bg-[#98D4F8] rounded-full mix-blend-screen filter blur-[100px] sm:blur-[120px] opacity-50"></div>
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-60 sm:w-96 h-60 sm:h-96 bg-[#98D4F8] rounded-full mix-blend-screen filter blur-[120px] sm:blur-[150px] opacity-50"></div>
 
         <div className="relative z-10 text-center">
           {/* Top line + Heading */}
           <div className="flex justify-center items-center">
-            <div className="bg-[#98D4F8] h-[150px] w-[2px]" />
+            <div className="bg-[#98D4F8] h-[80px] sm:h-[150px] w-[2px]" />
           </div>
-          <h2 className="text-[#98D4F8] mt-3 text-sm tracking-widest uppercase">
+          <h2 className="text-[#98D4F8] mt-3 text-xs sm:text-sm tracking-widest uppercase">
             Statistics
           </h2>
 
           {/* ✅ Stats Flexbox */}
-          <div className="mt-10 flex flex-wrap justify-evenly gap-10 md:gap-16">
+          <div className="mt-10 flex flex-wrap justify-center sm:justify-evenly gap-6 sm:gap-10 md:gap-16">
             <AnimatedCounter end={36} label="Kerala" trigger={isInView} />
             <AnimatedCounter end={50} label="Goa" trigger={isInView} />
             <AnimatedCounter end={17} label="Maharashtra" trigger={isInView} />
@@ -85,15 +87,17 @@ export default function StatisticSection() {
             <AnimatedCounter end={10} label="Growing At" trigger={isInView} />
           </div>
 
-          <div className="flex justify-center items-center mt-10">
+          {/* ✅ Responsive Graph + Text */}
+          <div className="mt-10 flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6 lg:gap-10">
             <Image
               src="/stat.png"
               alt="Statistics Graph"
-              width={600}
-              height={400}
-              className="w-full max-w-2xl h-auto"
+              width={800}
+              height={500}
+              className="w-full max-w-md sm:max-w-lg lg:max-w-3xl xl:max-w-4xl h-auto"
             />
-            <p className="mt-6 max-w-2xl px-3 pl-5 font-thin text-xl text-left text-white text-justify">
+
+            <p className="text-sm sm:text-base lg:text-xl font-thin text-left text-white text-justify px-2 sm:px-3 lg:px-5">
               Financial literacy varies across the nation. Our goal is to
               elevate these numbers, one student at a time. We believe that with
               the right guidance, anyone can gain the skills to make informed
