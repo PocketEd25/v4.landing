@@ -8,7 +8,6 @@ export default function AboutSection() {
       <div className="absolute top-20 right-20 w-72 h-72 bg-[#98D4F8] rounded-full mix-blend-screen filter blur-[120px] opacity-50"></div>
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-[#98D4F8] rounded-full mix-blend-screen filter blur-[150px] opacity-50"></div>
 
-
       {/* Content */}
       <div className="relative z-10 text-center">
         {/* Top line + Heading */}
@@ -22,8 +21,8 @@ export default function AboutSection() {
           Empowering Learners
         </h1>
 
-        {/* 3-column layout */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+        {/* 3-column layout for desktop, 1-column for tablet and mobile */}
+        <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
           {/* Left - Our Story */}
           <div className="text-left">
             <h3 className="it font-bold text-2xl mb-4">Our Story</h3>
@@ -36,7 +35,7 @@ export default function AboutSection() {
               financial education accessible to everyone. What began as a small
               initiative to help individuals understand money management has
               grown into a trusted learning community where knowledge meets
-              empowerment. For decades, we’ve been guiding students,
+              empowerment. For decades, we've been guiding students,
               professionals, and lifelong learners to build confidence in
               handling personal and professional finances.
             </p>
@@ -45,8 +44,8 @@ export default function AboutSection() {
             </button>
           </div>
 
-          {/* Center - Image */}
-          <div className="flex justify-center">
+          {/* Center - Image - Hidden on medium screens, visible on large */}
+          <div className="flex justify-center lg:flex">
             <Image
               src="/image2.png"
               alt="About Us Illustration"
